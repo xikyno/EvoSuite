@@ -1,0 +1,32 @@
+{
+  "targetClass": "demo.SmallTarget",
+  "testPackage": "demo",
+  "testFramework": "MOCKITO",
+  "testClassPrefix": "Test",
+  "testClassSuffix": "",
+  "baseTestClass": "org.openbdfc.measure.service.BaseTestCase",
+  "outputDirectory": "./generated-tests-style",
+  "globals": {
+    "mocks": []
+  },
+  "testCases": [
+    {
+      "testName": "testSign",
+      "methodCalls": [
+        {
+          "methodName": "sign",
+          "targetVariable": "smallTarget",
+          "resultVariable": "result",
+          "parameters": [
+            1
+          ]
+        }
+      ],
+      "assertions": {
+        "assertEquals": {
+          "1": "$ref:result"
+        }
+      }
+    }
+  ]
+}

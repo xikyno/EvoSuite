@@ -1,0 +1,27 @@
+{
+  "targetClass": "com.dongling.mediaplayer.utils.FileChecker",
+  "testPackage": "com.dongling.mediaplayer.utils",
+  "outputDirectory": "./generated-tests",
+  "testCases": [
+    {
+      "testName": "testIsMP3File",
+      "description": "测试正常 MP3 文件",
+      "methodCalls": [
+        { "methodName": "isMP3File", "resultVariable": "result", "parameters": ["new java.io.File(\"C:/Users/slt/evosuite/example_for_test/testdata/test.mp3\")"] }
+      ],
+      "assertions": {
+        "assertEquals": { "true": "result" }
+      }
+    },
+    {
+      "testName": "testIsMP4File",
+      "description": "测试正常 MP4 文件",
+      "methodCalls": [
+        { "methodName": "isMP4File", "resultVariable": "result", "parameters": ["new java.io.File(\"C:/Users/slt/evosuite/example_for_test/testdata/test.mp4\")"] }
+      ],
+      "assertions": {
+        "assertEquals": { "true": "result" }
+      }
+    }
+  ]
+}

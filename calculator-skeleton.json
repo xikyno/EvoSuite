@@ -1,0 +1,153 @@
+{
+  "_comment": "Fill variant 0, then copy it as variant 1/2/3 to add more data sets",
+  "targetClass": "com.example.Calculator",
+  "testPackage": "com.example",
+  "testFramework": "AUTO",
+  "testClassPrefix": "",
+  "testClassSuffix": "Test",
+  "baseTestClass": "",
+  "outputDirectory": "./src/test/java",
+  "globals": {
+    "mocks": []
+  },
+  "testCases": [
+    {
+      "methodName": "add",
+      "testName": "Add",
+      "variants": [
+        {
+          "testName": "testAdd0",
+          "description": "positive numbers",
+          "methodCalls": [
+            { "constructorFor": "com.example.Calculator", "resultVariable": "target", "parameters": ["Calc-A"] },
+            { "methodName": "add", "targetVariable": "target", "resultVariable": "result", "parameters": [1, 2] }
+          ],
+          "assertions": {
+            "assertEquals": { "3": "$ref:result" }
+          }
+        },
+        {
+          "testName": "testAdd1",
+          "description": "negative and positive",
+          "methodCalls": [
+            { "constructorFor": "com.example.Calculator", "resultVariable": "target", "parameters": ["Calc-B"] },
+            { "methodName": "add", "targetVariable": "target", "resultVariable": "result", "parameters": [-3, 10] }
+          ],
+          "assertions": {
+            "assertEquals": { "7": "$ref:result" }
+          }
+        }
+      ]
+    },
+    {
+      "methodName": "divide",
+      "testName": "Divide",
+      "variants": [
+        {
+          "testName": "testDivide0",
+          "description": "normal divide",
+          "methodCalls": [
+            { "constructorFor": "com.example.Calculator", "resultVariable": "target", "parameters": ["Calc-D1"] },
+            { "methodName": "divide", "targetVariable": "target", "resultVariable": "result", "parameters": [10, 2] }
+          ],
+          "assertions": {
+            "assertEquals": { "5": "$ref:result" }
+          }
+        },
+        {
+          "testName": "testDivide1",
+          "description": "divide by zero",
+          "expectedException": "java.lang.IllegalArgumentException",
+          "methodCalls": [
+            { "constructorFor": "com.example.Calculator", "resultVariable": "target", "parameters": ["Calc-D2"] },
+            { "methodName": "divide", "targetVariable": "target", "parameters": [10, 0] }
+          ]
+        }
+      ]
+    },
+    {
+      "methodName": "getName",
+      "testName": "GetName",
+      "variants": [
+        {
+          "testName": "testGetName0",
+          "description": "first name",
+          "methodCalls": [
+            { "constructorFor": "com.example.Calculator", "resultVariable": "target", "parameters": ["Alpha"] },
+            { "methodName": "getName", "targetVariable": "target", "resultVariable": "result", "parameters": [] }
+          ],
+          "assertions": {
+            "assertEquals": { "Alpha": "$ref:result" }
+          }
+        },
+        {
+          "testName": "testGetName1",
+          "description": "second name",
+          "methodCalls": [
+            { "constructorFor": "com.example.Calculator", "resultVariable": "target", "parameters": ["Beta"] },
+            { "methodName": "getName", "targetVariable": "target", "resultVariable": "result", "parameters": [] }
+          ],
+          "assertions": {
+            "assertEquals": { "Beta": "$ref:result" }
+          }
+        }
+      ]
+    },
+    {
+      "methodName": "greet",
+      "testName": "Greet",
+      "variants": [
+        {
+          "testName": "testGreet0",
+          "description": "normal greet",
+          "methodCalls": [
+            { "constructorFor": "com.example.Calculator", "resultVariable": "target", "parameters": ["小助手"] },
+            { "methodName": "greet", "targetVariable": "target", "resultVariable": "result", "parameters": ["张三"] }
+          ],
+          "assertions": {
+            "assertEquals": { "Hello, 张三! 我是 小助手": "$ref:result" }
+          }
+        },
+        {
+          "testName": "testGreet1",
+          "description": "empty user",
+          "methodCalls": [
+            { "constructorFor": "com.example.Calculator", "resultVariable": "target", "parameters": ["小助手"] },
+            { "methodName": "greet", "targetVariable": "target", "resultVariable": "result", "parameters": [""] }
+          ],
+          "assertions": {
+            "assertEquals": { "Hello, 陌生人!": "$ref:result" }
+          }
+        }
+      ]
+    },
+    {
+      "methodName": "multiply",
+      "testName": "Multiply",
+      "variants": [
+        {
+          "testName": "testMultiply0",
+          "description": "positive multiply",
+          "methodCalls": [
+            { "constructorFor": "com.example.Calculator", "resultVariable": "target", "parameters": ["Calc-M1"] },
+            { "methodName": "multiply", "resultVariable": "result", "parameters": [6, 7] }
+          ],
+          "assertions": {
+            "assertEquals": { "42": "$ref:result" }
+          }
+        },
+        {
+          "testName": "testMultiply1",
+          "description": "negative multiply",
+          "methodCalls": [
+            { "constructorFor": "com.example.Calculator", "resultVariable": "target", "parameters": ["Calc-M2"] },
+            { "methodName": "multiply", "resultVariable": "result", "parameters": [-3, 5] }
+          ],
+          "assertions": {
+            "assertEquals": { "-15": "$ref:result" }
+          }
+        }
+      ]
+    }
+  ]
+}

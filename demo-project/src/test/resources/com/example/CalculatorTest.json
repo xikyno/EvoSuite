@@ -1,0 +1,325 @@
+{
+  "targetClass" : "com.example.Calculator",
+  "testPackage" : "com.example",
+  "outputFormat" : "JUNIT4",
+  "outputDirectory" : "./src/test/java",
+  "testFramework" : "AUTO",
+  "testClassPrefix" : "",
+  "testClassSuffix" : "Test",
+  "baseTestClass" : "",
+  "testCases" : [ {
+    "methodName" : "add",
+    "testName" : "Add",
+    "description" : null,
+    "expectedException" : null,
+    "mocks" : [ ],
+    "methodCalls" : [ ],
+    "variants" : [ {
+      "methodName" : null,
+      "testName" : "testAdd0",
+      "description" : "positive numbers",
+      "expectedException" : null,
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : null,
+        "targetVariable" : null,
+        "resultVariable" : "target",
+        "parameters" : [ "Calc-A" ],
+        "constructorFor" : "com.example.Calculator",
+        "constructorCall" : true
+      }, {
+        "methodName" : "add",
+        "targetVariable" : "target",
+        "resultVariable" : "result",
+        "parameters" : [ 1, 2 ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : {
+        "assertEquals" : {
+          "3" : "$ref:result"
+        }
+      }
+    }, {
+      "methodName" : null,
+      "testName" : "testAdd1",
+      "description" : "negative and positive",
+      "expectedException" : null,
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : null,
+        "targetVariable" : null,
+        "resultVariable" : "target",
+        "parameters" : [ "Calc-B" ],
+        "constructorFor" : "com.example.Calculator",
+        "constructorCall" : true
+      }, {
+        "methodName" : "add",
+        "targetVariable" : "target",
+        "resultVariable" : "result",
+        "parameters" : [ -3, 10 ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : {
+        "assertEquals" : {
+          "7" : "$ref:result"
+        }
+      }
+    } ],
+    "assertions" : { }
+  }, {
+    "methodName" : "divide",
+    "testName" : "Divide",
+    "description" : null,
+    "expectedException" : null,
+    "mocks" : [ ],
+    "methodCalls" : [ ],
+    "variants" : [ {
+      "methodName" : null,
+      "testName" : "testDivide0",
+      "description" : "normal divide",
+      "expectedException" : null,
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : null,
+        "targetVariable" : null,
+        "resultVariable" : "target",
+        "parameters" : [ "Calc-D1" ],
+        "constructorFor" : "com.example.Calculator",
+        "constructorCall" : true
+      }, {
+        "methodName" : "divide",
+        "targetVariable" : "target",
+        "resultVariable" : "result",
+        "parameters" : [ 10, 2 ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : {
+        "assertEquals" : {
+          "5" : "$ref:result"
+        }
+      }
+    }, {
+      "methodName" : null,
+      "testName" : "testDivide1",
+      "description" : "divide by zero",
+      "expectedException" : "java.lang.IllegalArgumentException",
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : null,
+        "targetVariable" : null,
+        "resultVariable" : "target",
+        "parameters" : [ "Calc-D2" ],
+        "constructorFor" : "com.example.Calculator",
+        "constructorCall" : true
+      }, {
+        "methodName" : "divide",
+        "targetVariable" : "target",
+        "resultVariable" : null,
+        "parameters" : [ 10, 0 ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : { }
+    } ],
+    "assertions" : { }
+  }, {
+    "methodName" : "getName",
+    "testName" : "GetName",
+    "description" : null,
+    "expectedException" : null,
+    "mocks" : [ ],
+    "methodCalls" : [ ],
+    "variants" : [ {
+      "methodName" : null,
+      "testName" : "testGetName0",
+      "description" : "first name",
+      "expectedException" : null,
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : null,
+        "targetVariable" : null,
+        "resultVariable" : "target",
+        "parameters" : [ "Alpha" ],
+        "constructorFor" : "com.example.Calculator",
+        "constructorCall" : true
+      }, {
+        "methodName" : "getName",
+        "targetVariable" : "target",
+        "resultVariable" : "result",
+        "parameters" : [ ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : {
+        "assertEquals" : {
+          "Alpha" : "$ref:result"
+        }
+      }
+    }, {
+      "methodName" : null,
+      "testName" : "testGetName1",
+      "description" : "second name",
+      "expectedException" : null,
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : null,
+        "targetVariable" : null,
+        "resultVariable" : "target",
+        "parameters" : [ "Beta" ],
+        "constructorFor" : "com.example.Calculator",
+        "constructorCall" : true
+      }, {
+        "methodName" : "getName",
+        "targetVariable" : "target",
+        "resultVariable" : "result",
+        "parameters" : [ ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : {
+        "assertEquals" : {
+          "Beta" : "$ref:result"
+        }
+      }
+    } ],
+    "assertions" : { }
+  }, {
+    "methodName" : "greet",
+    "testName" : "Greet",
+    "description" : null,
+    "expectedException" : null,
+    "mocks" : [ ],
+    "methodCalls" : [ ],
+    "variants" : [ {
+      "methodName" : null,
+      "testName" : "testGreet0",
+      "description" : "normal greet",
+      "expectedException" : null,
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : null,
+        "targetVariable" : null,
+        "resultVariable" : "target",
+        "parameters" : [ "小助手" ],
+        "constructorFor" : "com.example.Calculator",
+        "constructorCall" : true
+      }, {
+        "methodName" : "greet",
+        "targetVariable" : "target",
+        "resultVariable" : "result",
+        "parameters" : [ "张三" ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : {
+        "assertEquals" : {
+          "Hello, 张三! 我是 小助手" : "$ref:result"
+        }
+      }
+    }, {
+      "methodName" : null,
+      "testName" : "testGreet1",
+      "description" : "empty user",
+      "expectedException" : null,
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : null,
+        "targetVariable" : null,
+        "resultVariable" : "target",
+        "parameters" : [ "小助手" ],
+        "constructorFor" : "com.example.Calculator",
+        "constructorCall" : true
+      }, {
+        "methodName" : "greet",
+        "targetVariable" : "target",
+        "resultVariable" : "result",
+        "parameters" : [ "" ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : {
+        "assertEquals" : {
+          "Hello, 陌生人!" : "$ref:result"
+        }
+      }
+    } ],
+    "assertions" : { }
+  }, {
+    "methodName" : "multiply",
+    "testName" : "Multiply",
+    "description" : null,
+    "expectedException" : null,
+    "mocks" : [ ],
+    "methodCalls" : [ ],
+    "variants" : [ {
+      "methodName" : null,
+      "testName" : "testMultiply0",
+      "description" : "positive multiply",
+      "expectedException" : null,
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : null,
+        "targetVariable" : null,
+        "resultVariable" : "target",
+        "parameters" : [ "Calc-M1" ],
+        "constructorFor" : "com.example.Calculator",
+        "constructorCall" : true
+      }, {
+        "methodName" : "multiply",
+        "targetVariable" : null,
+        "resultVariable" : "result",
+        "parameters" : [ 6, 7 ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : {
+        "assertEquals" : {
+          "42" : "$ref:result"
+        }
+      }
+    }, {
+      "methodName" : null,
+      "testName" : "testMultiply1",
+      "description" : "negative multiply",
+      "expectedException" : null,
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : null,
+        "targetVariable" : null,
+        "resultVariable" : "target",
+        "parameters" : [ "Calc-M2" ],
+        "constructorFor" : "com.example.Calculator",
+        "constructorCall" : true
+      }, {
+        "methodName" : "multiply",
+        "targetVariable" : null,
+        "resultVariable" : "result",
+        "parameters" : [ -3, 5 ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : {
+        "assertEquals" : {
+          "-15" : "$ref:result"
+        }
+      }
+    } ],
+    "assertions" : { }
+  } ],
+  "globals" : {
+    "mocks" : [ ]
+  }
+}

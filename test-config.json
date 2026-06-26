@@ -1,0 +1,49 @@
+{
+  "targetClass": "org.openbdfc.devops.integration.service.adpm.impl.InvestBatchDeliverVersionServiceImpl",
+  "testPackage": "org.openbdfc.devops.integration.service.adpm.impl",
+  "outputDirectory": "./generated-tests",
+  "testCases": [
+    {
+      "testName": "testDeliverVersionListQuery_WithResults",
+      "description": "批次详情-交付版本列表-正常返回数据",
+      "mocks": [
+        {
+          "mockClass": "org.openbdfc.devops.integration.repository.mapper.adpm.InvestBatchMapper",
+          "mockVariable": "investBatchMapper",
+          "injectMode": "field",
+          "fieldName": "investBatchMapper",
+          "stubs": [
+            { "method": "selectById", "matchers": ["anyLong()"], "returns": ["$ref:batchEntity"] }
+          ]
+        },
+        {
+          "mockClass": "org.openbdfc.devops.integration.repository.mapper.submittest.PublishingWindowMapper",
+          "mockVariable": "publishingWindowMapper",
+          "injectMode": "field",
+          "fieldName": "publishingWindowMapper",
+          "stubs": [
+            { "method": "selectBatchOfDeliverList", "matchers": ["anyString()", "anyString()"], "returns": ["$ref:deliverList"] }
+          ]
+        },
+        {
+          "mockClass": "org.openbdfc.devops.integration.repository.mapper.adpm.InvestBatchLinkSysManageApplicationMapper",
+          "mockVariable": "investBatchLinkSysManageApplicationMapper",
+          "injectMode": "field",
+          "fieldName": "investBatchLinkSysManageApplicationMapper",
+          "stubs": [
+            { "method": "listMoreByBatchIds", "matchers": ["anyList()"], "returns": ["$ref:null"] }
+          ]
+        }
+      ],
+      "methodCalls": [
+        {
+          "constructorFor": "org.openbdfc.devops.integration.service.adpm.impl.InvestBatchDeliverVersionServiceImpl",
+          "resultVariable": "service"
+        }
+      ],
+      "assertions": {
+        "assertNotNull": "$ref:service"
+      }
+    }
+  ]
+}

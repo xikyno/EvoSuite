@@ -1,0 +1,88 @@
+{
+  "targetClass": "com.example.UserService",
+  "testPackage": "com.example.test",
+  "outputFormat": "JUNIT4",
+  "outputDirectory": "./generated-tests",
+  "testCases": [
+    {
+      "testName": "testCreateUser_ValidInput",
+      "description": "Test creating a user with valid name and email",
+      "mocks": [
+        {
+          "mockClass": "com.example.DatabaseRepository",
+          "mockVariable": "dbMock",
+          "injectMode": "constructor",
+          "stubs": [
+            {
+              "method": "findByName",
+              "matchers": ["anyString()"],
+              "returns": ["$ref:null"]
+            },
+            {
+              "method": "save",
+              "matchers": ["any(User.class)"],
+              "returns": [true]
+            }
+          ]
+        }
+      ],
+      "methodCalls": [
+        {
+          "constructorFor": "com.example.UserService",
+          "resultVariable": "service",
+          "parameters": ["$ref:dbMock"]
+        },
+        {
+          "methodName": "createUser",
+          "targetVariable": "service",
+          "resultVariable": "user",
+          "parameters": ["John Doe", "john@example.com", 25]
+        }
+      ],
+      "assertions": {
+        "assertNotNull": "$ref:user",
+        "assertEquals": {
+          "user.getName()": "John Doe",
+          "user.getEmail()": "john@example.com"
+        }
+      }
+    },
+    {
+      "testName": "testCreateUser_DuplicateName",
+      "description": "Test that duplicate name throws exception",
+      "expectedException": "java.lang.IllegalArgumentException",
+      "mocks": [
+        {
+          "mockClass": "com.example.DatabaseRepository",
+          "mockVariable": "dbMock",
+          "injectMode": "setter",
+          "setterMethod": "setDatabaseRepository",
+          "stubs": [
+            {
+              "method": "findByName",
+              "matchers": ["eq(\"John Doe\")"],
+              "returns": ["$ref:existingUser"]
+            }
+          ]
+        }
+      ],
+      "methodCalls": [
+        {
+          "constructorFor": "com.example.UserService",
+          "resultVariable": "service"
+        },
+        {
+          "methodName": "setDatabaseRepository",
+          "targetVariable": "service",
+          "parameters": ["$ref:dbMock"]
+        },
+        {
+          "methodName": "createUser",
+          "targetVariable": "service",
+          "parameters": ["John Doe", "john@example.com", 25]
+        }
+      ],
+      "assertions": {}
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+﻿{
+  "targetClass": "com.dongling.mediaplayer.service.impl.MediaServiceImpl",
+  "testPackage": "com.dongling.mediaplayer.service.impl",
+  "testFramework": "MOCKITO",
+  "outputDirectory": "./generated-tests",
+  "testCases": [
+    {
+      "testName": "testPlay_WithBlankPath_ShouldThrowBizException",
+      "description": "空路径时抛出 BizException",
+      "expectedException": "com.dongling.mediaplayer.exception.BizException",
+      "methodCalls": [
+        {
+          "methodName": "play",
+          "targetVariable": "target",
+          "parameters": [
+            "",
+            "$expr:FileTypesEnum.MP3"
+          ]
+        }
+      ]
+    },
+    {
+      "testName": "testPlay_WithMissingPath_ShouldThrowBizException",
+      "description": "路径不存在时抛出 BizException",
+      "expectedException": "com.dongling.mediaplayer.exception.BizException",
+      "methodCalls": [
+        {
+          "methodName": "play",
+          "targetVariable": "target",
+          "parameters": [
+            "C:/Users/slt/evosuite/example_for_test/testdata/not-exists.mp3",
+            "$expr:FileTypesEnum.MP3"
+          ]
+        }
+      ]
+    },
+    {
+      "testName": "testPlay_WithMP4ButExpectMP3_ShouldThrowBizException",
+      "description": "MP4 文件按 MP3 播放时抛出 BizException",
+      "expectedException": "com.dongling.mediaplayer.exception.BizException",
+      "methodCalls": [
+        {
+          "methodName": "play",
+          "targetVariable": "target",
+          "parameters": [
+            "C:/Users/slt/evosuite/example_for_test/testdata/test.mp4",
+            "$expr:FileTypesEnum.MP3"
+          ]
+        }
+      ]
+    },
+    {
+      "testName": "testPlay_WithMP3ButExpectMP4_ShouldThrowBizException",
+      "description": "MP3 文件按 MP4 播放时抛出 BizException",
+      "expectedException": "com.dongling.mediaplayer.exception.BizException",
+      "methodCalls": [
+        {
+          "methodName": "play",
+          "targetVariable": "target",
+          "parameters": [
+            "C:/Users/slt/evosuite/example_for_test/testdata/test.mp3",
+            "$expr:FileTypesEnum.MP4"
+          ]
+        }
+      ]
+    },
+    {
+      "testName": "testStop",
+      "description": "停止播放不抛异常",
+      "methodCalls": [
+        {
+          "methodName": "stop",
+          "targetVariable": "target",
+          "parameters": []
+        }
+      ]
+    },
+    {
+      "testName": "testDestroy",
+      "description": "销毁播放器不抛异常",
+      "methodCalls": [
+        {
+          "methodName": "destroy",
+          "targetVariable": "target",
+          "parameters": []
+        }
+      ]
+    }
+  ]
+}

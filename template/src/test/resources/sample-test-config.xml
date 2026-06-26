@@ -1,0 +1,51 @@
+<testDataConfig>
+  <targetClass>com.example.UserService</targetClass>
+  <testPackage>com.example.test</testPackage>
+  <outputFormat>JUNIT4</outputFormat>
+  <outputDirectory>./generated-tests</outputDirectory>
+  <globals>
+    <timeout>5000</timeout>
+  </globals>
+  <testCases>
+    <testCase>
+      <testName>testCreateUser_ValidInput</testName>
+      <description>Test creating a user with valid name and email</description>
+      <methodCalls>
+        <methodCall>
+          <constructorFor>com.example.UserService</constructorFor>
+          <resultVariable>service</resultVariable>
+        </methodCall>
+        <methodCall>
+          <methodName>createUser</methodName>
+          <targetVariable>service</targetVariable>
+          <resultVariable>user</resultVariable>
+          <parameters>
+            <string>John Doe</string>
+            <string>john@example.com</string>
+            <int>25</int>
+          </parameters>
+        </methodCall>
+      </methodCalls>
+    </testCase>
+    <testCase>
+      <testName>testCreateUser_NullName</testName>
+      <description>Test that null name throws exception</description>
+      <expectedException>java.lang.IllegalArgumentException</expectedException>
+      <methodCalls>
+        <methodCall>
+          <constructorFor>com.example.UserService</constructorFor>
+          <resultVariable>service</resultVariable>
+        </methodCall>
+        <methodCall>
+          <methodName>createUser</methodName>
+          <targetVariable>service</targetVariable>
+          <parameters>
+            <null/>
+            <string>john@example.com</string>
+            <int>25</int>
+          </parameters>
+        </methodCall>
+      </methodCalls>
+    </testCase>
+  </testCases>
+</testDataConfig>

@@ -1,0 +1,30 @@
+{
+  "targetClass": "com.dongling.mediaplayer.utils.FileChecker",
+  "testPackage": "com.dongling.mediaplayer.utils",
+  "testFramework": "MOCKITO",
+  "testClassPrefix": "Test",
+  "testClassSuffix": "",
+  "baseTestClass": "org.openbdfc.measure.service.BaseTestCase",
+  "outputDirectory": "./generated-tests-style",
+  "globals": {
+    "mocks": []
+  },
+  "testCases": [
+    {
+      "testName": "testCheckValidFile",
+      "methodCalls": [
+        {
+          "methodName": "checkValidFile",
+          "targetVariable": "fileChecker",
+          "parameters": [
+            "",
+            "$expr:com.dongling.mediaplayer.enums.FileTypesEnum.MP3"
+          ]
+        }
+      ],
+      "assertions": {
+        "assertTrue": "true"
+      }
+    }
+  ]
+}

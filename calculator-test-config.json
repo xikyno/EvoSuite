@@ -1,0 +1,59 @@
+{
+  "targetClass": "com.example.Calculator",
+  "testPackage": "com.example",
+  "outputDirectory": "./generated-tests",
+  "testCases": [
+    {
+      "testName": "testAdd",
+      "description": "测试加法",
+      "methodCalls": [
+        { "constructorFor": "com.example.Calculator", "resultVariable": "calc", "parameters": ["计算器A"] },
+        { "methodName": "add", "targetVariable": "calc", "resultVariable": "result", "parameters": [3, 5] }
+      ],
+      "assertions": {
+        "assertEquals": { "8": "result" }
+      }
+    },
+    {
+      "testName": "testDivide_ByZero",
+      "description": "测试除零异常",
+      "expectedException": "java.lang.IllegalArgumentException",
+      "methodCalls": [
+        { "constructorFor": "com.example.Calculator", "resultVariable": "calc", "parameters": ["计算器B"] },
+        { "methodName": "divide", "targetVariable": "calc", "parameters": [10, 0] }
+      ]
+    },
+    {
+      "testName": "testGreet_Normal",
+      "description": "测试正常问候",
+      "methodCalls": [
+        { "constructorFor": "com.example.Calculator", "resultVariable": "calc", "parameters": ["超级计算器"] },
+        { "methodName": "greet", "targetVariable": "calc", "resultVariable": "msg", "parameters": ["张三"] }
+      ],
+      "assertions": {
+        "assertEquals": { "Hello, 张三! 我是 超级计算器": "msg" }
+      }
+    },
+    {
+      "testName": "testGreet_EmptyUser",
+      "description": "测试空用户名问候",
+      "methodCalls": [
+        { "constructorFor": "com.example.Calculator", "resultVariable": "calc", "parameters": ["测试"] },
+        { "methodName": "greet", "targetVariable": "calc", "resultVariable": "msg", "parameters": [""] }
+      ],
+      "assertions": {
+        "assertEquals": { "Hello, 陌生人!": "msg" }
+      }
+    },
+    {
+      "testName": "testMultiply_Static",
+      "description": "测试静态乘法",
+      "methodCalls": [
+        { "methodName": "multiply", "resultVariable": "result", "parameters": [6, 7] }
+      ],
+      "assertions": {
+        "assertEquals": { "42": "result" }
+      }
+    }
+  ]
+}
