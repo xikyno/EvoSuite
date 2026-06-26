@@ -1,0 +1,95 @@
+{
+  "_comment": "TODO: fill parameters, then copy variants like testAdd1/testAdd2",
+  "targetClass": "org.example.Calculator",
+  "testPackage": "org.example",
+  "testFramework": "AUTO",
+  "testClassPrefix": "",
+  "testClassSuffix": "Test",
+  "baseTestClass": "",
+  "outputDirectory": "./src/test/java",
+  "globals": {
+    "mocks": []
+  },
+  "testCases": [
+    {
+      "methodName": "add",
+      "testNamePrefix": "Add",
+      "variants": [
+        {
+          "testName": "Add0",
+          "description": "TODO: scenario for add(int, int)",
+          "methodCalls": [
+            { "methodName": "add", "targetVariable": "target", "resultVariable": "result", "parameters": ["TODO: int arg0", "TODO: int arg1"] }
+          ],
+          "assertions": {
+            "assertEquals": { "TODO: expected value": "$ref:result" }
+          }
+        }
+      ]
+    },
+    {
+      "methodName": "divide",
+      "testNamePrefix": "Divide",
+      "variants": [
+        {
+          "testName": "Divide0",
+          "description": "TODO: scenario for divide(int, int)",
+          "methodCalls": [
+            { "methodName": "divide", "targetVariable": "target", "resultVariable": "result", "parameters": ["TODO: int arg0", "TODO: int arg1"] }
+          ],
+          "assertions": {
+            "assertEquals": { "TODO: expected value": "$ref:result" }
+          }
+        }
+      ]
+    },
+    {
+      "methodName": "getName",
+      "testNamePrefix": "GetName",
+      "variants": [
+        {
+          "testName": "GetName0",
+          "description": "TODO: scenario for getName()",
+          "methodCalls": [
+            { "methodName": "getName", "targetVariable": "target", "resultVariable": "result", "parameters": [] }
+          ],
+          "assertions": {
+            "assertEquals": { "TODO: expected value": "$ref:result" }
+          }
+        }
+      ]
+    },
+    {
+      "methodName": "greet",
+      "testNamePrefix": "Greet",
+      "variants": [
+        {
+          "testName": "Greet0",
+          "description": "TODO: scenario for greet(String)",
+          "methodCalls": [
+            { "methodName": "greet", "targetVariable": "target", "resultVariable": "result", "parameters": ["TODO: String arg0"] }
+          ],
+          "assertions": {
+            "assertEquals": { "TODO: expected value": "$ref:result" }
+          }
+        }
+      ]
+    },
+    {
+      "methodName": "multiply",
+      "testNamePrefix": "Multiply",
+      "variants": [
+        {
+          "testName": "Multiply0",
+          "description": "TODO: scenario for multiply(int, int)",
+          "methodCalls": [
+            { "methodName": "multiply", "resultVariable": "result", "parameters": ["TODO: int arg0", "TODO: int arg1"] }
+          ],
+          "assertions": {
+            "assertEquals": { "TODO: expected value": "$ref:result" }
+          }
+        }
+      ]
+    }
+  ]
+}

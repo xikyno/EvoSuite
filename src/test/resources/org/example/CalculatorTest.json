@@ -1,0 +1,179 @@
+{
+  "targetClass" : "org.example.Calculator",
+  "testPackage" : "org.example",
+  "outputFormat" : "JUNIT4",
+  "outputDirectory" : "./src/test/java",
+  "testFramework" : "AUTO",
+  "testClassPrefix" : "",
+  "testClassSuffix" : "Test",
+  "baseTestClass" : "",
+  "testCases" : [ {
+    "methodName" : "add",
+    "testName" : null,
+    "description" : null,
+    "expectedException" : null,
+    "mocks" : [ ],
+    "methodCalls" : [ ],
+    "variants" : [ {
+      "methodName" : null,
+      "testName" : "Add0",
+      "description" : "normal add",
+      "expectedException" : null,
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : "add",
+        "targetVariable" : "target",
+        "resultVariable" : "result",
+        "parameters" : [ "1", "2" ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : {
+        "assertEquals" : {
+          "3" : "$ref:result"
+        }
+      }
+    } ,{
+      "methodName" : null,
+      "testName" : "Add1",
+      "description" : "negative add",
+      "expectedException" : null,
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : "add",
+        "targetVariable" : "target",
+        "resultVariable" : "result",
+        "parameters" : [ "-5", "3" ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : {
+        "assertEquals" : {
+          "-2" : "$ref:result"
+        }
+      }
+    } ],
+    "assertions" : { }
+  }, {
+    "methodName" : "divide",
+    "testName" : null,
+    "description" : null,
+    "expectedException" : null,
+    "mocks" : [ ],
+    "methodCalls" : [ ],
+    "variants" : [ {
+      "methodName" : null,
+      "testName" : "Divide0",
+      "description" : "TODO: scenario for divide(int, int)",
+      "expectedException" : null,
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : "divide",
+        "targetVariable" : "target",
+        "resultVariable" : "result",
+        "parameters" : [ "3", "2" ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : {
+        "assertEquals" : {
+          "1" : "$ref:result"
+        }
+      }
+    } ],
+    "assertions" : { }
+  }, {
+    "methodName" : "getName",
+    "testName" : null,
+    "description" : null,
+    "expectedException" : null,
+    "mocks" : [ ],
+    "methodCalls" : [ ],
+    "variants" : [ {
+      "methodName" : null,
+      "testName" : "GetName0",
+      "description" : "xikyno",
+      "expectedException" : null,
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : "getName",
+        "targetVariable" : "target",
+        "resultVariable" : "result",
+        "parameters" : [ ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : {
+        "assertEquals" : {
+          "xikyno" : "$ref:result"
+        }
+      }
+    } ],
+    "assertions" : { }
+  }, {
+    "methodName" : "greet",
+    "testName" : null,
+    "description" : null,
+    "expectedException" : null,
+    "mocks" : [ ],
+    "methodCalls" : [ ],
+    "variants" : [ {
+      "methodName" : null,
+      "testName" : "Greet0",
+      "description" : "TODO: scenario for greet(String)",
+      "expectedException" : null,
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : "greet",
+        "targetVariable" : "target",
+        "resultVariable" : "result",
+        "parameters" : [ null ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : {
+        "assertEquals" : {
+          "Hello, 陌生人!" : "$ref:result"
+        }
+      }
+    } ],
+    "assertions" : { }
+  }, {
+    "methodName" : "multiply",
+    "testName" : null,
+    "description" : null,
+    "expectedException" : null,
+    "mocks" : [ ],
+    "methodCalls" : [ ],
+    "variants" : [ {
+      "methodName" : null,
+      "testName" : "Multiply0",
+      "description" : "TODO: scenario for multiply(int, int)",
+      "expectedException" : null,
+      "mocks" : [ ],
+      "methodCalls" : [ {
+        "methodName" : "multiply",
+        "targetVariable" : null,
+        "resultVariable" : "result",
+        "parameters" : [ "-1", "2" ],
+        "constructorFor" : null,
+        "constructorCall" : false
+      } ],
+      "variants" : [ ],
+      "assertions" : {
+        "assertEquals" : {
+          "-2" : "$ref:result"
+        }
+      }
+    } ],
+    "assertions" : { }
+  } ],
+  "globals" : {
+    "mocks" : [ ]
+  }
+}
